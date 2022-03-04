@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>JS Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		.result
+  		{
+  			width: 100%;
+  			height: 75px;
+  		}
+  		.btn
+  		{
+  			width: 100%;
+  		} 
+  		.result
+  		{
+  			text-align: right;
+  		}
+	</style>
+</head>
+<body>
+	<div class="container pt-5">
+		<div class="row pt-5">
+			<div class="col-md-8 pt-5">
+				<form name="form_1">
+					<table class="table table-bordered pt-5" >
+						<tbody>
+							<tr>
+								<td colspan="4">
+									<input type="textview" name="textview" class="result">
+								</td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert('%')" value="%"/></td>
+								<td><input type="button" class="btn btn-light" onclick="clean()" value="CE"/></td>
+								<td><input type="button" class="btn btn-light" onclick="clean()" value="C"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('')" value="<"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert()" value="1/x"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert()" value="x2"/></td>
+								<td><input type="button" class="btn" onclick="insert()" value="@"></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('/')" value="/"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(7)" value="7"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(8)" value="8"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(9)" value="9"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('*')" value="x"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(4)" value="4"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(5)" value="5"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(6)" value="6"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('-')" value="-"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert(1)" value="1"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(2)" value="2"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(3)" value="3"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('+')" value="+"/></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="btn btn-light" onclick="insert('00')" value="00"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert(0)" value="0"/></td>
+								<td><input type="button" class="btn btn-light" onclick="insert('.')" value="."/></td>
+								<td><input type="button" class="btn btn-primary" onclick="equal()" value="="/></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+		</div>
+	</div>
+
+	
+	<script type="text/javascript">
+		function insert(num)
+  		{
+  			document.form_1.textview.value=document.form_1.textview.value+num
+  		}
+  		function equal()
+  		{
+  			let equation=document.form_1.textview.value;
+  			if(equation)
+  			{
+  				document.form_1.textview.value=eval(equation)
+  			}
+  		}
+  		function clean()
+  		{
+  			document.form_1.textview.value="";
+  		}
+ 
+	</script>
+ 	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
